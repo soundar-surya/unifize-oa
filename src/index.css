@@ -1,0 +1,13 @@
+:root {
+  font-family: sans-serif;
+}
+
+html {
+  overflow: hidden;
+}
+
+body {
+  margin: 0;
+  height: 100vh;
+  overflow: hidden;
+}
