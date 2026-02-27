@@ -51,6 +51,9 @@ src/
 
 ## Features & Implementation Details
 
+### UI and Styling
+I intentionally avoided using any external UI component libraries or CSS frameworks. Instead, I used plain CSS for styling and built custom components using native HTML elements (such as the native `<select>` API). The assignment was quite interesting, so I found it fun and refreshing to write my own CSS and components from scratch after a long time! :)
+
 ### Keyboard Navigation
 The application supports **full keyboard navigation**, making it fully accessible and usable without a mouse.
 
