@@ -1,16 +1,63 @@
-# React + Vite
+# Product Catalog App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Deployed Project
+🔗 [https://unifize-oa.vercel.app](https://unifize-oa.vercel.app)
 
-Currently, two official plugins are available:
+## How to Run This Project
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+1. **Clone the repository** (if not already done):
+   ```bash
+   git clone <repository-url>
+   cd unifize-oa
+   ```
 
-## React Compiler
+2. **Install dependencies**:
+   ```bash
+   npm install
+   ```
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+3. **Run the development server**:
+   ```bash
+   npm run dev
+   ```
+   The application will be running locally at the URL provided in the terminal (usually `http://localhost:5173`).
 
-## Expanding the ESLint configuration
+## Folder Structure
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+```
+src/
+├── App.css
+├── App.jsx
+├── main.jsx
+├── index.css
+├── assets/                 # Static assets (svg)
+├── components/             # UI Components
+│   ├── filters/            # Filtering components 
+│   ├── product_catalog/    # Product listing and card components
+│   ├── searchbar/          # Search functionality components
+│   └── sortby/             # Sorting functionality components
+├── hooks/                  # Custom hooks for business logic
+│   ├── useDebounce.js
+│   ├── useFilteredAndSortedProducts.js
+│   ├── useProductCatalogData.js
+│   ├── useProductCategories.js
+│   └── useSavedFilter.js
+└── services/               # API and data services
+    ├── catalogApi.js
+    └── data/               # Mock data or schemas
+```
+
+## Features & Implementation Details
+
+### Keyboard Navigation
+The application supports **full keyboard navigation**, making it fully accessible and usable without a mouse.
+
+### Search Functionality
+Based on the provided UI design, there is a dedicated search button next to the search input. To perform a search, you can either:
+- Type your search query and **click the search button**.
+- Type your search query and **press the `Enter` key**.
+
+### Architecture Note: State Management
+For simplicity in this assignment, the `ProductCatalog` component holds the centralized state for filters, products, and the search query. 
+- **Current Approach**: The filter state is passed down to the filter components. When any single filter is updated, the entire filter component re-renders. This is an acceptable tradeoff for the scope and complexity of this current scenario.
+- **Future Improvements**: This architecture could be optimized by introducing a dedicated state store (like Zustand or Redux). In that enhanced setup, each individual filter component would subscribe only to its specific piece of filter draft state from the store. Consequently, updating one filter would only trigger a re-render for that specific UI component, avoiding unnecessary re-renders of the entire filter section.
