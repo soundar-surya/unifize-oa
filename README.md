@@ -2,6 +2,7 @@
 
 ## Deployed Project
 🔗 [https://unifize-oa.vercel.app](https://unifize-oa.vercel.app)
+[https://www.loom.com/share/ce63d4767623401e85639333fe245f24](loom recording)
 
 ## How to Run This Project
 
