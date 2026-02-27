@@ -1,8 +1,9 @@
 # Product Catalog App
 
 ## Deployed Project
-🔗 [https://unifize-oa.vercel.app](https://unifize-oa.vercel.app)
-[https://www.loom.com/share/ce63d4767623401e85639333fe245f24](loom recording)
+
+- 🔗 **Live Demo:** [unifize-oa.vercel.app](https://unifize-oa.vercel.app)
+- 🎥 **Loom Video:** [Watch the demo](https://www.loom.com/share/ce63d4767623401e85639333fe245f24)
 
 ## How to Run This Project
 
